@@ -2,6 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .animate-slideUpCubiBezier {
+    animation: slideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .animation-delay-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes diamondFlash {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(147, 51, 234, 0.8), 0 0 35px rgba(37, 99, 235, 0.6);
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(1.3) rotate(45deg);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(147, 51, 234, 1), 0 0 40px rgba(37, 99, 235, 0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(45deg);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(147, 51, 234, 1), 0 0 45px rgba(37, 99, 235, 1);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(1.2) rotate(45deg);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 1), 0 0 28px rgba(147, 51, 234, 0.9), 0 0 38px rgba(37, 99, 235, 0.7);
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
