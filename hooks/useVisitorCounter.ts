@@ -7,23 +7,20 @@ export const useVisitorCounter = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Simulate API call or use localStorage for demo
-    const getVisitorCount = () => {
-      const stored = localStorage.getItem('visitorCount')
-      const currentCount = stored ? parseInt(stored) : Math.floor(Math.random() * 1000) + 500
-      
-      // Increment count for new visit
-      const newCount = currentCount + 1
-      localStorage.setItem('visitorCount', newCount.toString())
-      
-      return newCount
+    const fetchVisitorCount = async () => {
+      try {
+        const response = await fetch('https://e024p6dfvb.execute-api.us-east-1.amazonaws.com/prod/visitor-count')
+        const data = await response.json()
+        setCount(data.count)
+        setIsLoading(false)
+      } catch (error) {
+        console.error('Error fetching visitor count:', error)
+        setCount(1)
+        setIsLoading(false)
+      }
     }
 
-    // Simulate loading delay for animation effect
-    setTimeout(() => {
-      setCount(getVisitorCount())
-      setIsLoading(false)
-    }, 1000)
+    fetchVisitorCount()
   }, [])
 
   return { count, isLoading }
