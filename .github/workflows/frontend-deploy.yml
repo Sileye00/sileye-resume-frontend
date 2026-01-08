@@ -16,10 +16,18 @@ jobs:
         node-version: '18'
     
     - name: Install dependencies
-      run: npm install
+      run: |
+        echo "Current directory: $(pwd)"
+        echo "Directory contents:"
+        ls -la
+        npm install
     
     - name: Build
-      run: npm run build
+      run: |
+        echo "Building project..."
+        npm run build
+        echo "Build completed. Checking out directory:"
+        ls -la out/ || echo "No out directory found"
     
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
