@@ -21,8 +21,12 @@ export default function RootLayout({
         >
           <Navbar /> 
           {children}
+          <div className="py-2 bg-gray-50 dark:bg-gray-900">
+            <div className="container mx-auto px-4 flex justify-center">
+              <VisitorCounter />
+            </div>
+          </div>
           <Footer />
-          <VisitorCounter />
         </ThemeProvider>
       </body>
     </html>

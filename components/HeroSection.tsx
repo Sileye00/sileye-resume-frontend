@@ -12,7 +12,7 @@ const HeroSection = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900" />
       
-      <div className="relative container mx-auto px-4 py-16">
+      <div className="relative container mx-auto px-4 py-16 pt-24 sm:pt-16">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left animate-fadeIn">
@@ -76,17 +76,22 @@ const HeroSection = () => {
         </div>
         
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
           <Link
             to="about"
-            className="cursor-pointer p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="cursor-pointer group py-4"
             activeClass="active"
             spy={true}
             smooth={true}
             offset={-100}
             duration={500}
           >
-            <HiArrowDown size={24} className="text-gray-600 dark:text-gray-400" />
+            {/* Just the animated arrow */}
+            <HiArrowDown 
+              size={32} 
+              className="text-blue-500 group-hover:text-purple-500 animate-bounce transition-colors duration-300" 
+              style={{filter: 'drop-shadow(0 0 6px rgba(59, 130, 246, 0.6))'}} 
+            />
           </Link>
         </div>
       </div>

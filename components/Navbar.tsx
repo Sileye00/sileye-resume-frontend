@@ -40,7 +40,7 @@ export default function Navbar() {
               <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">SS</span>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white hidden sm:block">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
                 Sileye Sarr
               </h2>
             </div>
@@ -60,7 +60,7 @@ export default function Navbar() {
               <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">SS</span>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white hidden sm:block">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
                 Sileye Sarr
               </h2>
             </div>
@@ -100,10 +100,10 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300"
             onClick={() => setNavbar(!navbar)}
           >
-            {navbar ? <IoMdClose size={24} /> : <IoMdMenu size={24} />}
+            {navbar ? <IoMdClose size={24} className="text-gray-700 dark:text-gray-300" /> : <IoMdMenu size={24} className="text-gray-700 dark:text-gray-300" />}
           </button>
         </div>
 
