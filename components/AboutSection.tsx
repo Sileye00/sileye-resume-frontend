@@ -73,25 +73,23 @@ const AboutSection = () => {
             
             <div className="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed">
               <p>
-                As a{" "}
-                <span className="font-semibold text-blue-600 dark:text-blue-400">highly ambitious</span>,
-                <span className="font-semibold text-blue-600 dark:text-blue-400">{" self-motivated"}</span>, and
-                <span className="font-semibold text-blue-600 dark:text-blue-400">{" results-driven"}</span> Cloud/DevOps/AI/ML engineer
-                based in Dallas, TX, I bring expertise in designing and implementing scalable cloud solutions.
+                I'm a{" "}
+                <span className="font-semibold text-blue-600 dark:text-blue-400">curious self-learner</span>{" "}
+                who loves building with technology. Based in the Dallas Metropolitan area, TX, I design scalable cloud infrastructure, automate CI/CD pipelines, and help bring AI/ML solutions into production across AWS, Azure, and Google Cloud.
               </p>
               
               <p>
-                I excel in automating workflows, streamlining deployment pipelines, and developing intelligent ML solutions that ensure efficient and reliable software delivery.
-                My expertise spans configuration management, containerization, CI/CD automation, Infrastructure as Code, and machine learning model deployment across multi-cloud environments.
-              </p>
-              
-              <p>
-                I believe in{" "}
+                I enjoy turning messy ideas into reliable systems: Infrastructure as Code, containerized deployments, configuration management, or streamlined release workflows. I'm especially interested in the{" "}
                 <span className="font-semibold text-purple-600 dark:text-purple-400">
-                  continuous learning and innovation
-                </span>{" "}
-                especially in the rapidly evolving tech landscape. 
-                I&apos;m passionate about leveraging cutting-edge technologies like AWS SageMaker, PyTorch, and modern DevOps practices to solve complex problems and drive business success.
+                  intersection of DevOps and ML
+                </span>, where automation and strong cloud architecture make models easier to deploy, monitor, and improve.
+              </p>
+              
+              <p>
+                I'm a big believer in{" "}
+                <span className="font-semibold text-purple-600 dark:text-purple-400">
+                  continuous learning and practical experimentation
+                </span>. I like working with tools like AWS SageMaker, PyTorch, and modern DevOps practices to solve real problems, improve delivery speed, and build systems that scale.
               </p>
             </div>
           </div>
@@ -116,14 +114,14 @@ const AboutSection = () => {
             </div>
             
             {/* Professional Image - moved back */}
-            <div className="relative mt-8">
+            <div className="relative mt-8 mx-auto lg:mx-0 max-w-md">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg blur-xl opacity-20" />
               <Image
                 src="/sileyefinal.png"
                 alt="Sileye Sarr professional photo"
                 width={400}
                 height={300}
-                className="relative rounded-lg shadow-lg brightness-110 dark:brightness-125 dark:contrast-110"
+                className="relative rounded-lg shadow-lg brightness-110 dark:brightness-125 dark:contrast-110 w-full h-auto"
               />
             </div>
           </div>

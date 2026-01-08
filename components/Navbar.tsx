@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes"
 import React, { useState, useEffect } from "react"
 import { RiMoonFill, RiSunLine } from "react-icons/ri"
-import { Link } from "react-scroll/modules"
+import { Link } from "react-scroll"
 import { IoMdMenu, IoMdClose } from "react-icons/io"
 
 interface NavItem {
@@ -128,7 +128,10 @@ export default function Navbar() {
               ))}
               
               <button
-                onClick={toggleTheme}
+                onClick={() => {
+                  toggleTheme()
+                  setNavbar(false)
+                }}
                 className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
                 {theme === "dark" ? (

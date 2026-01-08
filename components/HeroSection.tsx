@@ -12,10 +12,37 @@ const HeroSection = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900" />
       
+      {/* Add keyframes for gradient animation */}
+      <style jsx>{`
+        @keyframes colorCycle {
+          0% { color: #2563eb; filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.6)); }
+          33% { color: #9333ea; filter: drop-shadow(0 0 8px rgba(147, 51, 234, 0.6)); }
+          66% { color: #06b6d4; filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6)); }
+          100% { color: #2563eb; filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.6)); }
+        }
+      `}</style>
+      
       <div className="relative container mx-auto px-4 py-16 pt-24 sm:pt-16">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left animate-fadeIn">
+          {/* Image - First on mobile, second on desktop */}
+          <div className="flex-shrink-0 animate-fadeIn animation-delay-2 order-1 lg:order-2 mx-auto lg:flex lg:justify-start lg:-ml-8">
+            <div className="relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 rounded-full blur-sm opacity-75 animate-pulse"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 rounded-full animate-spin" style={{animationDuration: '3s'}}></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-2xl opacity-20 animate-pulse" />
+              <Image
+                src="/sileye.png"
+                alt="Sileye Sarr - Cloud DevOps Engineer"
+                width={250}
+                height={250}
+                className="relative rounded-full shadow-2xl"
+                priority
+              />
+            </div>
+          </div>
+          
+          {/* Text Content - Second on mobile, first on desktop */}
+          <div className="flex-1 text-center lg:text-left animate-fadeIn order-2 lg:order-1">
             <div className="mb-6">
               <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white">
                 Hi, I&apos;m{" "}
@@ -32,9 +59,9 @@ const HeroSection = () => {
             <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
               I&apos;m a{" "}
               <span className="font-semibold text-blue-600 dark:text-blue-400">
-                Cloud/DevOps/AI/ML Engineer
+                curious self-learner
               </span>{" "}
-              based in Dallas, TX. I specialize in designing scalable cloud infrastructure, automating CI/CD pipelines, and building ML solutions across AWS, Google Cloud, and Azure ecosystems.
+              who loves building with technology. I design cloud infrastructure, automate CI/CD, and bring AI/ML solutions to life across AWS, Azure, and Google Cloud from the Dallas Metropolitan area, TX.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -56,27 +83,10 @@ const HeroSection = () => {
               </button>
             </div>
           </div>
-          
-          {/* Image */}
-          <div className="flex-shrink-0 animate-fadeIn animation-delay-2">
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 rounded-full blur-sm opacity-75 animate-pulse"></div>
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 rounded-full animate-spin" style={{animationDuration: '3s'}}></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-2xl opacity-20 animate-pulse" />
-              <Image
-                src="/sileye.png"
-                alt="Sileye Sarr - Cloud DevOps Engineer"
-                width={300}
-                height={300}
-                className="relative rounded-full shadow-2xl"
-                priority
-              />
-            </div>
-          </div>
         </div>
         
         {/* Scroll indicator */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-0 lg:-bottom-20 left-1/2 transform -translate-x-1/2">
           <Link
             to="about"
             className="cursor-pointer group py-4"
@@ -89,8 +99,12 @@ const HeroSection = () => {
             {/* Just the animated arrow */}
             <HiArrowDown 
               size={32} 
-              className="text-blue-500 group-hover:text-purple-500 animate-bounce transition-colors duration-300" 
-              style={{filter: 'drop-shadow(0 0 6px rgba(59, 130, 246, 0.6))'}} 
+              className="animate-bounce transition-all duration-300" 
+              style={{
+                color: '#2563eb',
+                animation: 'colorCycle 3s ease-in-out infinite, bounce 1s infinite',
+                filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.6))'
+              }} 
             />
           </Link>
         </div>
