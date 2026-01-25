@@ -17,7 +17,7 @@ const Footer = () => {
             Let&apos;s Connect
           </h3>
           <div className="flex justify-center space-x-4">
-            <a href="https://github.com/sileye" rel="noreferrer" target="_blank">
+            <a href="https://github.com/sileye00" rel="noreferrer" target="_blank">
               <AiOutlineGithub
                 className="hover:-translate-y-1 transition-transform cursor-pointer text-purple-500 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300"
                 size={30}
@@ -29,7 +29,7 @@ const Footer = () => {
                 size={30}
               />
             </a>
-            <a href="https://linkedin.com/in/sileye-sarr" rel="noreferrer" target="_blank">
+            <a href="https://linkedin.com/in/sileyesarr" rel="noreferrer" target="_blank">
               <AiOutlineLinkedin
                 className="hover:-translate-y-1 transition-transform cursor-pointer text-purple-500 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300"
                 size={30}
