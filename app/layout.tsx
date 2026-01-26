@@ -5,6 +5,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import VisitorCounter from '@/components/VisitorCounter'
 import { ThemeProvider } from "next-themes"
+import Head from 'next/head'
 
 export default function RootLayout({
   children,
@@ -13,6 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className="dark:bg-stone-900 transition-colors duration-300">
         <ThemeProvider 
           attribute="class" 
