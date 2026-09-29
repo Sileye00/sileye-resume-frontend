@@ -9,7 +9,7 @@ const projects = [
     name: "SilEye AI",
     description: "SaaS platform offering multimodal AI tools including chat, image generation, music, video, and code generation through API integrations.",
     technologies: ["Generative AI", "SaaS", "API Integration", "Multimodal AI"],
-    github: "https://github.com/Sileye00/sileye-ai.git",
+    github: "https://github.com/Sileye00/sileye-ai",
     demo: "#",
     icon: <FiCpu className="w-6 h-6" />
   },
@@ -17,7 +17,7 @@ const projects = [
     name: "AWS Agentic Customer Support System",
     description: "Built an agentic customer support system using Amazon Bedrock AgentCore and Strands SDK with tool use, memory, and multi-agent orchestration.",
     technologies: ["Amazon Bedrock", "Strands SDK", "AgentCore", "Multi-Agent"],
-    github: "https://github.com/Sileye00/aws-bedrock-customer-support-chatbot.git",
+    github: "https://github.com/Sileye00/aws-bedrock-customer-support-chatbot",
     demo: "#",
     icon: <FiCpu className="w-6 h-6" />
   },
@@ -25,7 +25,7 @@ const projects = [
     name: "Amazon Bedrock Agentic AI & Multi-Agent Systems",
     description: "Designed and deployed multi-agent systems on Amazon Bedrock with RAG, agent memory, routing, state management, and AI governance.",
     technologies: ["Amazon Bedrock", "RAG", "LLM", "AI Governance"],
-    github: "https://github.com/Sileye00/ai-support-agent.git",
+    github: "https://github.com/Sileye00/ai-support-agent",
     demo: "#",
     icon: <FiCode className="w-6 h-6" />
   },
@@ -41,7 +41,7 @@ const projects = [
     name: "Cloud Resume Challenge",
     description: "Full-stack serverless resume website with CI/CD pipeline, visitor counter, and infrastructure as code deployment.",
     technologies: ["Next.js", "AWS Lambda", "DynamoDB", "CloudFormation"],
-    github: "https://github.com/Sileye00/sileye-resume-frontend.git",
+    github: "https://github.com/Sileye00/sileye-resume-frontend",
     demo: "https://sileye-resume.com",
     icon: <FiCode className="w-6 h-6" />
   },
