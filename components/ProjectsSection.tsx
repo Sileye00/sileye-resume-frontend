@@ -47,10 +47,45 @@ const projects = [
   },
 ]
 
+const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
+  <div className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-200 dark:border-gray-700 h-full">
+    <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500" />
+    <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+      <div className="flex items-center justify-between mb-2">
+        <div className="p-2.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl text-white shadow-sm">
+          {project.icon}
+        </div>
+        <div className="flex space-x-1">
+          <Link href={project.github} target="_blank"
+            className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-blue-600 dark:hover:bg-blue-500 transition-all duration-200">
+            <BsGithub size={15} />
+          </Link>
+          <Link href={project.demo} target="_blank"
+            className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-purple-600 dark:hover:bg-purple-500 transition-all duration-200">
+            <BsArrowUpRightSquare size={15} />
+          </Link>
+        </div>
+      </div>
+      <h3 className="text-base font-bold text-gray-900 dark:text-white leading-snug">{project.name}</h3>
+    </div>
+    <div className="p-4">
+      <p className="text-gray-600 dark:text-gray-300 mb-3 text-sm leading-relaxed">{project.description}</p>
+      <div className="flex flex-wrap gap-1.5">
+        {project.technologies.slice(0, 3).map((tech, techIdx) => (
+          <span key={techIdx} className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-lg text-xs font-medium">{tech}</span>
+        ))}
+        {project.technologies.length > 3 && (
+          <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-lg text-xs">+{project.technologies.length - 3}</span>
+        )}
+      </div>
+    </div>
+  </div>
+)
+
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-600">
+      <div className="px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
@@ -67,90 +102,43 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, idx) => {
-            return (
-              <SlideUp key={idx} offset="-100px">
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-200 dark:border-gray-700">
-                  {/* Project Header */}
-                  <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md text-white">
-                        {project.icon}
-                      </div>
-                      <div className="flex space-x-2">
-                        <Link 
-                          href={project.github} 
-                          target="_blank"
-                          className="p-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                        >
-                          <BsGithub size={16} />
-                        </Link>
-                        <Link 
-                          href={project.demo} 
-                          target="_blank"
-                          className="p-1 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                        >
-                          <BsArrowUpRightSquare size={16} />
-                        </Link>
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                      {project.name}
-                    </h3>
-                  </div>
-                  
-                  {/* Project Content */}
-                  <div className="p-4">
-                    <p className="text-gray-600 dark:text-gray-300 mb-3 text-sm leading-relaxed">
-                      {project.description}
-                    </p>
-                    
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.slice(0, 3).map((tech, techIdx) => (
-                        <span
-                          key={techIdx}
-                          className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies.length > 3 && (
-                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded text-xs">
-                          +{project.technologies.length - 3}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </SlideUp>
-            )
-          })}
+        {/* Top row — 3 cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          {projects.slice(0, 3).map((project, idx) => (
+            <SlideUp key={idx} offset="-100px">
+              <ProjectCard project={project} />
+            </SlideUp>
+          ))}
         </div>
-        
+
+        {/* Bottom row — 2 cards centered */}
+        <div className="grid md:grid-cols-2 gap-6 lg:w-2/3 lg:mx-auto">
+          {projects.slice(3).map((project, idx) => (
+            <SlideUp key={idx} offset="-100px">
+              <ProjectCard project={project} />
+            </SlideUp>
+          ))}
+        </div>
+
         {/* Achievements Section */}
-        <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8">
-          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900 dark:text-white">
-            🏆 Achievements
-          </h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="text-center">
-              <h4 className="font-bold text-lg text-blue-600 dark:text-blue-400 mb-2">
-                AWS DeepRacer League 2023 Winner
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300">
-                Championship Finalist (Competed at AWS re:Invent 2023)
-              </p>
-            </div>
-            <div className="text-center">
-              <h4 className="font-bold text-lg text-purple-600 dark:text-purple-400 mb-2">
-                Amazon Campus Summer Series 2024
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300">
-                Participant (Invite-only program)
-              </p>
+        <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-px shadow-lg">
+          <div className="bg-white dark:bg-gray-900 rounded-xl px-6 py-5">
+            <h3 className="text-lg font-bold text-center mb-5 text-gray-900 dark:text-white">🏆 Achievements</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3 p-3 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/50">
+                <span className="text-xl mt-0.5">🥇</span>
+                <div>
+                  <h4 className="font-bold text-sm text-blue-700 dark:text-blue-400">AWS DeepRacer League 2023 Winner</h4>
+                  <p className="text-gray-500 dark:text-gray-400 text-xs mt-0.5">Championship Finalist · AWS re:Invent 2023</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-3 rounded-lg bg-purple-50 dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/50">
+                <span className="text-xl mt-0.5">🎓</span>
+                <div>
+                  <h4 className="font-bold text-sm text-purple-700 dark:text-purple-400">Amazon Campus Summer Series 2024</h4>
+                  <p className="text-gray-500 dark:text-gray-400 text-xs mt-0.5">Participant · Invite-only program</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

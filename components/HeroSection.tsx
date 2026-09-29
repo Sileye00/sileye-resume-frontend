@@ -22,7 +22,7 @@ const HeroSection = () => {
         }
       `}</style>
       
-      <div className="relative container mx-auto px-4 py-16 pt-24 sm:pt-16">
+      <div className="relative px-8 py-16 pt-24 sm:pt-16">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Image - First on mobile, second on desktop */}
           <div className="flex-shrink-0 animate-fadeIn animation-delay-2 order-1 lg:order-2 mx-auto lg:flex lg:justify-start lg:-ml-8">
@@ -82,6 +82,7 @@ const HeroSection = () => {
                 Download CV
               </button>
             </div>
+
           </div>
         </div>
         

@@ -46,8 +46,8 @@ const getSkillColor = (category: string) => {
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-600">
+      <div className="px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
@@ -68,28 +68,24 @@ const AboutSection = () => {
           {/* Content */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              The Human Behind the Code
+              Built on Curiosity
             </h3>
             
-            <div className="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
               <p>
-                I'm a{" "}
+                I&apos;m a{" "}
                 <span className="font-semibold text-blue-600 dark:text-blue-400">curious self-learner</span>{" "}
-                who loves building with technology. Based in the Dallas Metropolitan area, TX, I design scalable cloud infrastructure, automate CI/CD pipelines, and help bring AI/ML solutions into production across AWS, Azure, and Google Cloud.
+                who loves turning ideas into things that actually work. Based in the Dallas area, I build across cloud, AI, and automation — from scalable infrastructure and CI/CD pipelines to machine learning and intelligent AI systems.
               </p>
-              
               <p>
-                I enjoy turning messy ideas into reliable systems: Infrastructure as Code, containerized deployments, configuration management, or streamlined release workflows. I'm especially interested in the{" "}
-                <span className="font-semibold text-purple-600 dark:text-purple-400">
-                  intersection of DevOps and ML
-                </span>, where automation and strong cloud architecture make models easier to deploy, monitor, and improve.
+                My journey started with web development and grew into cloud computing, machine learning, and now generative and agentic AI. I&apos;m especially interested in building AI systems that can reason, use tools, retrieve knowledge, remember context, and collaborate through{" "}
+                <span className="font-semibold text-purple-600 dark:text-purple-400">multi-agent workflows</span>.
               </p>
-              
               <p>
-                I'm a big believer in{" "}
-                <span className="font-semibold text-purple-600 dark:text-purple-400">
-                  continuous learning and practical experimentation
-                </span>. I like working with tools like AWS SageMaker, PyTorch, and modern DevOps practices to solve real problems, improve delivery speed, and build systems that scale.
+                I believe the best way to learn technology is to build with it. Whether I&apos;m experimenting with Amazon Bedrock and AgentCore, deploying ML solutions, automating cloud infrastructure, or exploring a new idea — I&apos;m always learning, testing, and improving.
+              </p>
+              <p>
+                For me, technology isn&apos;t just about writing code — it&apos;s about solving real problems and building something useful.
               </p>
             </div>
           </div>

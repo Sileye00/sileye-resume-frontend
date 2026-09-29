@@ -1,11 +1,7 @@
-"use client"
-
 import Footer from '@/components/Footer'
 import './globals.css'
 import Navbar from '@/components/Navbar'
-import VisitorCounter from '@/components/VisitorCounter'
-import { ThemeProvider } from "next-themes"
-import Head from 'next/head'
+import Providers from '@/components/Providers'
 
 export default function RootLayout({
   children,
@@ -17,21 +13,14 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="dark:bg-stone-900 transition-colors duration-300">
-        <ThemeProvider 
-          attribute="class" 
-          defaultTheme="light"
-          enableSystem={false}
-        >
-          <Navbar /> 
-          {children}
-          <div className="py-2 bg-gray-50 dark:bg-gray-900">
-            <div className="container mx-auto px-4 flex justify-center">
-              <VisitorCounter />
-            </div>
+      <body className="bg-gray-300 dark:bg-gray-950 transition-colors duration-300">
+        <Providers>
+          <Navbar />
+          <div className="max-w-5xl mx-auto shadow-2xl">
+            {children}
           </div>
           <Footer />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   )
