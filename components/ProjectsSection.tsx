@@ -6,38 +6,6 @@ import { FiCode, FiDatabase, FiCpu } from "react-icons/fi"
 
 const projects = [
   {
-    name: "Pre-trained Image Classifier (Dog Breeds)",
-    description: "Automated breed recognition using a pre-trained model with high accuracy for dog breed classification.",
-    technologies: ["Python", "PyTorch", "Machine Learning", "Computer Vision"],
-    github: "https://github.com/sileye/dog-breed-classifier",
-    demo: "#",
-    icon: <FiCpu className="w-6 h-6" />
-  },
-  {
-    name: "Bike-Sharing Demand Forecasting",
-    description: "Predicted demand using historical data and automated workflows with AutoGluon for accurate forecasting.",
-    technologies: ["AutoGluon", "Python", "Data Analysis", "Time Series"],
-    github: "https://github.com/sileye/bike-sharing-forecast",
-    demo: "#",
-    icon: <FiDatabase className="w-6 h-6" />
-  },
-  {
-    name: "Scenes Unlimited ML Workflow",
-    description: "Developed ML pipelines with Lambda, SageMaker, and Step Functions, including deployment and monitoring.",
-    technologies: ["AWS SageMaker", "Lambda", "Step Functions", "MLOps"],
-    github: "https://github.com/sileye/ml-workflow-sagemaker",
-    demo: "#",
-    icon: <FiCode className="w-6 h-6" />
-  },
-  {
-    name: "Cloud Resume Challenge",
-    description: "Full-stack serverless resume website with CI/CD pipeline, visitor counter, and infrastructure as code deployment.",
-    technologies: ["Next.js", "AWS Lambda", "DynamoDB", "CloudFormation"],
-    github: "https://github.com/sileye/cloud-resume",
-    demo: "https://sileye-resume.com",
-    icon: <FiCode className="w-6 h-6" />
-  },
-  {
     name: "SilEye AI",
     description: "SaaS platform offering multimodal AI tools including chat, image generation, music, video, and code generation through API integrations.",
     technologies: ["Generative AI", "SaaS", "API Integration", "Multimodal AI"],
@@ -46,12 +14,36 @@ const projects = [
     icon: <FiCpu className="w-6 h-6" />
   },
   {
-    name: "Landmark Classification",
-    description: "Built a model to identify and tag major landmarks in photos using computer vision techniques.",
-    technologies: ["Computer Vision", "CNN", "Image Processing", "Python"],
-    github: "https://github.com/sileye/landmark-classification",
+    name: "AWS Agentic Customer Support System",
+    description: "Built an agentic customer support system using Amazon Bedrock AgentCore and Strands SDK with tool use, memory, and multi-agent orchestration.",
+    technologies: ["Amazon Bedrock", "Strands SDK", "AgentCore", "Multi-Agent"],
+    github: "https://github.com/sileye/agentic-customer-support",
+    demo: "#",
+    icon: <FiCpu className="w-6 h-6" />
+  },
+  {
+    name: "Amazon Bedrock Agentic AI & Multi-Agent Systems",
+    description: "Designed and deployed multi-agent systems on Amazon Bedrock with RAG, agent memory, routing, state management, and AI governance.",
+    technologies: ["Amazon Bedrock", "RAG", "LLM", "AI Governance"],
+    github: "https://github.com/sileye/bedrock-multi-agent",
+    demo: "#",
+    icon: <FiCode className="w-6 h-6" />
+  },
+  {
+    name: "Scones Unlimited ML Workflow",
+    description: "Developed ML pipelines with Lambda, SageMaker, and Step Functions, including deployment and monitoring.",
+    technologies: ["AWS SageMaker", "Lambda", "Step Functions", "MLOps"],
+    github: "https://github.com/sileye/ml-workflow-sagemaker",
     demo: "#",
     icon: <FiDatabase className="w-6 h-6" />
+  },
+  {
+    name: "Cloud Resume Challenge",
+    description: "Full-stack serverless resume website with CI/CD pipeline, visitor counter, and infrastructure as code deployment.",
+    technologies: ["Next.js", "AWS Lambda", "DynamoDB", "CloudFormation"],
+    github: "https://github.com/sileye/cloud-resume",
+    demo: "https://sileye-resume.com",
+    icon: <FiCode className="w-6 h-6" />
   },
 ]
 

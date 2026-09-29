@@ -70,6 +70,14 @@ const certifications = [
 
 const education = [
   {
+    name: "AWS Agentic Engineer Nanodegree",
+    issuer: "Udacity",
+    date: "Aug 2026 – Oct 2026 (Expected)",
+    description: "Focuses on Amazon Bedrock AgentCore, Strands SDK, RAG, agent memory, tool use, multi-agent systems, orchestration, routing, state management, and AI governance.",
+    icon: <FaGraduationCap className="w-8 h-8" />,
+    color: "from-blue-500 to-indigo-500"
+  },
+  {
     name: "AWS Machine Learning Fundamentals Nanodegree",
     issuer: "Udacity",
     date: "Aug 2024",
@@ -175,7 +183,7 @@ const CertificationsSection = () => {
           <h3 className="text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white">
             Education & Training
           </h3>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {education.map((edu, idx) => {
               return (
                 <SlideUp key={idx} offset="-100px">

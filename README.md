@@ -60,7 +60,7 @@ This project demonstrates:
 
 This project is split into separate repositories:
 
-### 🎨 [Frontend Repository](https://github.com/Sileye00/sileye-resume-frontend)
+### 🎨 Frontend (This Repo)
 - Next.js 14 + TypeScript
 - Tailwind CSS styling
 - Responsive design with dark/light theme
